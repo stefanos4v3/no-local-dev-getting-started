@@ -24,4 +24,7 @@ get "/create" do
   match = /(.*?)\.herokuapp\.com/.match(request.host)
   dashboard_url << "apps/#{match[1]}/resources" if match && match[1]
   redirect to(dashboard_url)
+  
+class Contact < ActiveRecord::Base
+  self.table_name = 'salesforce.contact'
 end
